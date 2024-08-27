@@ -32,6 +32,7 @@
           }
         ],
         "@angular-eslint/use-pipe-transform-interface": ["off"],
+        "@nx/dependecy-checks": "off",
         "@nx/enforce-module-boundaries": [
           "error",
           {

@@ -70,10 +70,19 @@
     },
     "@nx/angular:library": {
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "buildable": true,
+      "displayBlock": true,
+      "prefix": "crx",
+      "style": "scss",
+      "changeDetection": "OnPush",
+      "compilationMode": "full"
     },
     "@nx/angular:component": {
       "style": "scss",
+      "prefix": "crx",
+      "changeDetection": "OnPush",
+      "displayBlock": true,
       "standalone": true
     }
   }

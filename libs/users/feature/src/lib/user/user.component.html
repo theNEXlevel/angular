@@ -1,7 +1,7 @@
 <a class="text-blue-500 hover:underline" routerLink="/"> Back to Users</a>
 @defer {
-    @if (store.user(); as user) {
-        <crx-user-profile [data]="user" />
+    @if (store.userProfile(); as user) {
+        <crx-user-profile (favorite)="store.toggleFavorite($event)" [data]="user" />
     }
 } @placeholder {
     <p>Custom skeleton loader here!</p>

@@ -27,10 +27,16 @@ const usersState = {
 export const UsersStore = signalStore(
     { providedIn: 'root' },
     withState<UsersState>(usersState),
-    withComputed(({ name, users, favorites }) => ({
+    withComputed(({ name, users, user, favorites }) => ({
         filteredUsers: computed(() => users().reduce<User[]>((acc, user) =>
             user.name.toLowerCase().includes(name().toLowerCase())
-                ? [...acc, { ...user, isFavorite: favorites()[user.id] }] : acc, []))
+                ? [...acc, { ...user, isFavorite: favorites()[user.id] }] : acc, [])),
+        userProfile: computed(() => {
+
+            const selectedUser = user();
+            return selectedUser ? { ...selectedUser, isFavorite: favorites()[selectedUser.id] } : null;
+
+        })
     })),
     withMethods((store, usersService = inject(UsersService), document = inject(DOCUMENT)) => ({
 

@@ -10,4 +10,5 @@ export type User = {
     phone: string;
     website: string;
     company: Company;
+    isFavorite?: boolean;
 };

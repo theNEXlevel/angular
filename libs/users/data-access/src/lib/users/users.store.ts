@@ -38,7 +38,12 @@ export const UsersStore = signalStore(
             error: ({ message }) => patchState(store, { error: message })
         }))))),
 
-        setNameFilter: (name: string) => patchState(store, { name })
+        setNameFilter: (name: string) => patchState(store, { name }),
+
+        toggleFavorite: (id: number) => patchState(
+            store,
+            { users: store.users().map((user) => user.id === id ? { ...user, isFavorite: !user.isFavorite } : user) }
+        )
 
     }))
 );

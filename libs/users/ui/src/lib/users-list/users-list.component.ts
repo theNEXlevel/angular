@@ -1,5 +1,5 @@
 import { User } from '@angular-task/users-util';
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { UserCardComponent } from '../user-card';
 
 @Component({
@@ -16,5 +16,6 @@ import { UserCardComponent } from '../user-card';
 export class UsersListComponent {
 
     data = input.required<User[]>();
+    favorite = output<number>();
 
 }

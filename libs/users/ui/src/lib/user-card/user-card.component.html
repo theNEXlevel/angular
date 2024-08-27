@@ -1,7 +1,11 @@
 <a [routerLink]="'/users/' + data().id">
     <img [ngSrc]="imgUrl" class="w-full" height="575" width="840" />
     <div class="px-6 py-4">
-        <span class="font-bold text-lg">{{ data().name }}</span>
+        <div class="flex justify-between">
+            <span class="font-bold text-lg">{{ data().name }}</span>
+            <mat-icon (click)="favorite.emit(data().id)" [class.text-yellow-500]="data().isFavorite" crxClickStopPropogation fontIcon="star" />
+        </div>
+
         <p class="text-gray-500">{{ data().email }}</p>
     </div>
 </a>

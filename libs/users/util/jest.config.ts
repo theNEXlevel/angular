@@ -3,7 +3,7 @@ export default {
     displayName: 'users-utils',
     preset: '../../../jest.preset.js',
     setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-    coverageDirectory: '../../../coverage/libs/users/utils',
+    coverageDirectory: '../../../coverage/libs/users/util',
     transform: {
         '^.+\\.(ts|mjs|js|html)$': [
             'jest-preset-angular',

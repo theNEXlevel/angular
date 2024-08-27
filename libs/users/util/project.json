@@ -1,23 +1,23 @@
 {
   "name": "users-utils",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/users/utils/src",
+  "sourceRoot": "libs/users/util/src",
   "prefix": "crx",
   "projectType": "library",
-  "tags": [],
+  "tags": ["type:util"],
   "targets": {
     "build": {
       "executor": "@nx/angular:ng-packagr-lite",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/users/utils/ng-package.json"
+        "project": "libs/users/util/ng-package.json"
       },
       "configurations": {
         "production": {
-          "tsConfig": "libs/users/utils/tsconfig.lib.prod.json"
+          "tsConfig": "libs/users/util/tsconfig.lib.prod.json"
         },
         "development": {
-          "tsConfig": "libs/users/utils/tsconfig.lib.json"
+          "tsConfig": "libs/users/util/tsconfig.lib.json"
         }
       },
       "defaultConfiguration": "production"
@@ -26,7 +26,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/users/utils/jest.config.ts"
+        "jestConfig": "libs/users/util/jest.config.ts"
       }
     },
     "lint": {

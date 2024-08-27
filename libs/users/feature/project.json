@@ -4,7 +4,7 @@
   "sourceRoot": "libs/users/feature/src",
   "prefix": "crx",
   "projectType": "library",
-  "tags": [],
+  "tags": ["type:feature"],
   "targets": {
     "build": {
       "executor": "@nx/angular:ng-packagr-lite",

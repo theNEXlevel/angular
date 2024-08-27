@@ -4,7 +4,7 @@
   "sourceRoot": "libs/users/ui/src",
   "prefix": "crx",
   "projectType": "library",
-  "tags": [],
+  "tags": ["type:ui"],
   "targets": {
     "build": {
       "executor": "@nx/angular:ng-packagr-lite",

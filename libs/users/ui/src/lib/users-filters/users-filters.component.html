@@ -1,4 +1,7 @@
-<mat-form-field>
-    <mat-label>Name</mat-label>
-    <input [formControl]="nameControl" matInput placeholder="John Smith" />
-</mat-form-field>
+<form [formGroup]="filtersForm" class="flex gap-4 items-center">
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input formControlName="name" matInput placeholder="John Smith" />
+    </mat-form-field>
+    <mat-slide-toggle class="mb-5" formControlName="favorite">Favorites</mat-slide-toggle>
+</form>

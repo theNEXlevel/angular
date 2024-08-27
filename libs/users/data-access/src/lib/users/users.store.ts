@@ -15,11 +15,13 @@ type UsersState = {
     favorites: Record<number, boolean>;
     error?: HttpErrorResponse;
     name: string;
+    favorite: boolean;
 };
 
 const usersState = {
     user: null,
     users: [],
+    favorite: false,
     favorites: {},
     name: ''
 };
@@ -27,10 +29,17 @@ const usersState = {
 export const UsersStore = signalStore(
     { providedIn: 'root' },
     withState<UsersState>(usersState),
-    withComputed(({ name, users, user, favorites }) => ({
-        filteredUsers: computed(() => users().reduce<User[]>((acc, user) =>
-            user.name.toLowerCase().includes(name().toLowerCase())
-                ? [...acc, { ...user, isFavorite: favorites()[user.id] }] : acc, [])),
+    withComputed(({ name, users, user, favorite, favorites }) => ({
+        filteredUsers: computed(() => {
+
+            const usersListWithNameFilter = users().reduce<User[]>((acc, user) =>
+                user.name.toLowerCase().includes(name().toLowerCase())
+                    ? [...acc, { ...user, isFavorite: favorites()[user.id] }] : acc, []);
+            const isFavoriteFilters = !!favorite();
+            return isFavoriteFilters
+                ? usersListWithNameFilter.filter(({ isFavorite }) => isFavorite) : usersListWithNameFilter;
+
+        }),
         userProfile: computed(() => {
 
             const selectedUser = user();
@@ -50,7 +59,10 @@ export const UsersStore = signalStore(
             error: ({ message }) => patchState(store, { error: message })
         }))))),
 
-        setNameFilter: (name: string) => patchState(store, { name }),
+        setFilters: (filters: Partial<{ name: string, favorite: boolean }>) => patchState(
+            store,
+            { name: filters.name, favorite: filters.favorite }
+        ),
 
         setFavorites: (favorites: Record<number, boolean>) => patchState(store, { favorites }),
 

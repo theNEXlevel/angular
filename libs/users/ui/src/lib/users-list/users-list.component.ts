@@ -6,7 +6,7 @@ import { UserCardComponent } from '../user-card';
     selector: 'crx-users-list',
     standalone: true,
     host: {
-        class: 'grid grid-cols-2 lg:grid-cols-6 md:grid-cols-4 gap-4',
+        class: 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4',
     },
     templateUrl: './users-list.component.html',
     styleUrl: './users-list.component.scss',

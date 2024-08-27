@@ -1,1 +1,8 @@
-<h1>User Profile Page</h1>
+<a class="text-blue-500 hover:underline" routerLink="/"> Back to Users</a>
+@defer {
+    @if (store.user(); as user) {
+        <crx-user-profile [data]="user" />
+    }
+} @placeholder {
+    <p>Custom skeleton loader here!</p>
+}

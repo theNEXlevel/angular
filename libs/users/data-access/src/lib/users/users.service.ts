@@ -12,4 +12,10 @@ export class UsersService {
 
     users$ = this.http.get<User[]>(this.baseUrl);
 
+    getUser$ (id: number) {
+
+        return this.http.get<User>(`${this.baseUrl}/${id}`);
+
+    }
+
 }

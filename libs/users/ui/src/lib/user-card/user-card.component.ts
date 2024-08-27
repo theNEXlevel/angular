@@ -1,9 +1,7 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { User } from '@angular-task/users-util';
+import { User, USER_PROFILE_PLACEHOLDER } from '@angular-task/users-util';
 import { NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
-
-const USER_PROFILE_PLACEHOLDER = '/assets/images/blank-user-profile.png';
 
 @Component({
     selector: 'crx-user-card',

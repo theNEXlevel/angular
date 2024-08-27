@@ -1,2 +1,3 @@
 <h1>User Management</h1>
-<crx-users-list [data]="store.users()" />
+<crx-users-filters (nameChange)="store.setNameFilter($event)" />
+<crx-users-list [data]="store.filteredUsers()" />

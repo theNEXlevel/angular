@@ -1,5 +1,6 @@
 import { User } from '@angular-task/users-util';
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { UserCardComponent } from '../user-card';
 
 @Component({
     selector: 'crx-users-list',
@@ -10,6 +11,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
     templateUrl: './users-list.component.html',
     styleUrl: './users-list.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [UserCardComponent],
 })
 export class UsersListComponent {
 

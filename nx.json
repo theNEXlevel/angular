@@ -72,7 +72,7 @@
       "linter": "eslint",
       "unitTestRunner": "jest",
       "buildable": true,
-      "displayBlock": true,
+      "standalone": true,
       "prefix": "crx",
       "style": "scss",
       "changeDetection": "OnPush",
@@ -82,7 +82,6 @@
       "style": "scss",
       "prefix": "crx",
       "changeDetection": "OnPush",
-      "displayBlock": true,
       "standalone": true
     }
   }

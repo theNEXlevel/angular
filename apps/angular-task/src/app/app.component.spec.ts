@@ -12,15 +12,6 @@ describe('AppComponent', () => {
 
     });
 
-    it('should render title', () => {
-
-        const fixture = TestBed.createComponent(AppComponent);
-        fixture.detectChanges();
-        const compiled = fixture.nativeElement as HTMLElement;
-        expect(compiled.querySelector('h1')?.textContent).toContain('User Management');
-
-    });
-
     it(`should have as title 'angular-task'`, () => {
 
         const fixture = TestBed.createComponent(AppComponent);

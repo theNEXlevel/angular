@@ -1,5 +1,5 @@
 {
-  "name": "users-utils",
+  "name": "users-util",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/users/util/src",
   "prefix": "crx",

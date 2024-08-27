@@ -1,4 +1,4 @@
-import { User } from '@angular-task/users-util';
+import type { User } from '@angular-task/users-util';
 import { computed, inject } from '@angular/core';
 import { patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
